@@ -92,7 +92,7 @@ class diff_tool:
                 dict, list, int, complex, float, str, tuple, set, range, frozenset, bytes, bytearray, memoryview)
             if not (isinstance(getattr(object_a, old_attr), typesTuple) and isinstance(getattr(object_b, new_attr),
                                                                                        typesTuple)):
-                # condition that  object point to  Himself
+                # condition that  object point to  Himself or 'visited' in the hashtable
                 if id(getattr(object_a, old_attr)) in self.hash_visit or id(
                         getattr(object_b, new_attr)) in self.hash_visit :
                     pass
